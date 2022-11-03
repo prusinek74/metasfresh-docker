@@ -94,22 +94,10 @@ services:
     restart: always
 volumes:
     db:
-      driver_opts:
-        type: "nfs"
-        o: "addr=192.168.100.21,nolock,soft,rw"
-        device: ":/export/db"
+      external: true
     search:
-      driver_opts:
-        type: "nfs"
-        o: "addr=192.168.100.21,nolock,soft,rw"
-        device: ":/export/search"
+      external: true
     logs:
-      driver_opts:
-        type: "nfs"
-        o: "addr=192.168.100.21,nolock,soft,rw"
-        device: ":/export/logs" 
+      external: true    
     libs:
-      driver_opts:
-        type: "nfs"
-        o: "addr=192.168.100.21,nolock,soft,rw"
-        device: ":/export/libs"
+      external: true
