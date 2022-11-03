@@ -16,9 +16,6 @@ services:
       - POSTGRES_PASSWORD=ip2LmNzXX8p8iXg9lZTWEJ9524kQDbXFudB7LR03T-xK9fLweX3TLMkA2AYcEiaS
   app:
     build: app
-    expose:
-      - "8282"
-      - "8788"
     restart: always
     volumes:
       - logs:/opt/metasfresh/log:rw
@@ -30,8 +27,6 @@ services:
       - METASFRESH_HOME=/opt/metasfresh
   webapi:
     build: webapi
-    expose:
-      - "8789"
 # to access the webui-api directly 
 # (eg. for debugging or connecting your app to the metasfresh api) 
 # uncomment following port:
@@ -57,8 +52,6 @@ services:
     #- WEBAPI_URL=http://example.com:8080
   rabbitmq:
     build: rabbitmq
-    expose:
-      - "5672"
     restart: always
     volumes:
       - logs:/var/log/rabbitmq/log
